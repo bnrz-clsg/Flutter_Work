@@ -1,4 +1,4 @@
-# Flutter_Work
+# Flutter_Work -  Find nearest Evacuation App.
 
 This application provides user to find nearest evacuation center
 from its current locatin. and allows user to Go to pinned location
