@@ -7,7 +7,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final List<Transaction> transaction = [
+  final List<Transaction> transactions = [
     Transaction(
         id: 't1', title: 'grocery', amount: 69.99, date: DateTime.now()),
     Transaction(id: 't2', title: 'bill', amount: 500.00, date: DateTime.now()),
@@ -33,9 +33,27 @@ class _MainPageState extends State<MainPage> {
                       offset: Offset(0.7, 0.7)),
                 ]),
           ),
-          Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,children: <Widget>[
-            Card() 
-          ],)
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: transactions.map((e) {
+                return Card(
+                    child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Php: ' + e.amount.toString() + ' - '),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(e.title),
+                        Text(e.date.toString())
+                      ],
+                    )
+                  ],
+                ));
+              }).toList())
         ],
       ),
     );
