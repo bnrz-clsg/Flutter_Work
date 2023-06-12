@@ -25,7 +25,7 @@ class TransactionList extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text('₱  ${transactions[index].amount}'),
-                  SizedBox(width: 20),
+                  SizedBox(width: 35),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
